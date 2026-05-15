@@ -1,0 +1,226 @@
+.navbar-notif-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-notif-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(150, 120, 255, 0.1);
+  background: #fff;
+  color: #5f5a7f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.navbar-notif-btn:hover {
+  background: #f7f3ff;
+  color: #6d42f4;
+  border-color: rgba(124, 77, 255, 0.25);
+}
+
+.navbar-notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
+  animation: badgePop 0.3s ease-out;
+}
+
+@keyframes badgePop {
+  0% { transform: scale(0.5); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.navbar-notif-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 380px;
+  background: #fff;
+  border: 1px solid rgba(150, 120, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  overflow: hidden;
+  animation: dropIn 0.2s ease-out;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar-notif-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3efff;
+  background: #faf8ff;
+}
+
+.navbar-notif-dropdown-header h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #312b63;
+}
+
+.navbar-notif-dropdown-header button {
+  background: none;
+  border: none;
+  color: #6d42f4;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.navbar-notif-dropdown-header button:hover {
+  background: rgba(124, 77, 255, 0.08);
+}
+
+.navbar-notif-dropdown-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.navbar-notif-dropdown-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.navbar-notif-dropdown-list::-webkit-scrollbar-thumb {
+  background: #e0d8ff;
+  border-radius: 99px;
+}
+
+.navbar-notif-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: #c4bed8;
+}
+
+.navbar-notif-empty p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.navbar-notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f8f5ff;
+  cursor: pointer;
+  transition: 0.15s ease;
+  position: relative;
+}
+
+.navbar-notif-item:last-child {
+  border-bottom: none;
+}
+
+.navbar-notif-item:hover {
+  background: #fcfaff;
+}
+
+.navbar-notif-unread {
+  background: #fdfcff;
+}
+
+.navbar-notif-unread::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: #6d42f4;
+}
+
+.navbar-notif-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navbar-notif-icon.friend_request { background: #eef2ff; color: #4f46e5; }
+.navbar-notif-icon.friend_accepted { background: #ecfdf5; color: #059669; }
+.navbar-notif-icon.chat_message { background: #fef3c7; color: #d97706; }
+
+.navbar-notif-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.navbar-notif-content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #443d6b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navbar-notif-content strong {
+  color: #312b63;
+}
+
+.navbar-notif-time {
+  font-size: 11px;
+  color: #b8b2d4;
+  font-weight: 500;
+  margin-top: 2px;
+  display: block;
+}
+
+.navbar-notif-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6d42f4;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+  .navbar-notif-dropdown {
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+  }
+}
