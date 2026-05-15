@@ -29,10 +29,7 @@ SECRET_KEY = 'django-insecure-awvvb@58y!b%ortvi8n())6bpd&y7zyg@f%fvg@=4ohalght=m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = ['quizhub0601.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -136,6 +133,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Add this line right here:
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
 ]
@@ -148,8 +152,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True  # For development only, remove in production
-
+CORS_ALLOW_ALL_ORIGINS = True  
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_HEADERS = [
