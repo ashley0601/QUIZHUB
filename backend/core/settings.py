@@ -142,6 +142,8 @@ STATICFILES_DIRS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
+    "https://quizhub-indol.vercel.app",
+    "https://quizhub0601.pythonanywhere.com"
 ]
 
 # CORS settings
@@ -215,4 +217,4 @@ EMAIL_HOST_PASSWORD = 'vkvxvuhzkkptxxgr '
 DEFAULT_FROM_EMAIL = 'ongashley060@gmail.com'
 
 # Frontend URL (Used to construct the reset link)
-FRONTEND_URL = 'http://localhost:3000' 
+FRONTEND_URL = 'https://quizhub-indol.vercel.app'
