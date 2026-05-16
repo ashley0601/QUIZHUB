@@ -78,6 +78,5 @@ urlpatterns = [
     path('api/manual-quiz/', include('manual_quiz.urls')),
 ]
 
-# Serve Media Files in Debug Mode
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serve Media Files (Works on both Local and Production)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

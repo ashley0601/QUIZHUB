@@ -143,7 +143,6 @@ STATICFILES_DIRS = [
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "https://quizhub-indol.vercel.app",
-    "https://quizhub0601.pythonanywhere.com"
 ]
 
 # CORS settings
@@ -218,3 +217,7 @@ DEFAULT_FROM_EMAIL = 'ongashley060@gmail.com'
 
 # Frontend URL (Used to construct the reset link)
 FRONTEND_URL = 'https://quizhub-indol.vercel.app'
+
+# Paste this at the VERY BOTTOM of settings.py
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
